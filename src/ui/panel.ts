@@ -1,6 +1,12 @@
 import { connectPanel, PanelCallError } from "@cuelith/panel";
-import type { RichChange } from "@cuelith/protocol";
-import { SIZES, viewOf } from "./logic.js";
+import {
+  OUTLINE_PRESETS,
+  SHADOW_PRESETS,
+  type OutlinePreset,
+  type RichChange,
+  type ShadowPreset,
+} from "@cuelith/protocol";
+import { OUTLINES, SHADOWS, SIZES, viewOf } from "./logic.js";
 
 // Pannello del plugin Formattazione: legge dallo stato il testo che un editor sta modificando
 // (`live.richText`) e, quando si preme un pulsante, chiede al motore la modifica sul tratto
@@ -19,6 +25,9 @@ const bold = element("bold") as HTMLButtonElement;
 const italic = element("italic") as HTMLButtonElement;
 const color = element("color") as HTMLInputElement;
 const clear = element("clear") as HTMLButtonElement;
+const outline = element("outline") as HTMLSelectElement;
+const outlineColor = element("outline-color") as HTMLInputElement;
+const shadow = element("shadow") as HTMLSelectElement;
 
 element("size-label").textContent = panel.t("cuelith.richtext.size");
 element("color-label").textContent = panel.t("cuelith.richtext.color");
@@ -27,6 +36,21 @@ bold.setAttribute("aria-label", panel.t("cuelith.richtext.bold"));
 italic.textContent = panel.t("cuelith.richtext.italicShort");
 italic.setAttribute("aria-label", panel.t("cuelith.richtext.italic"));
 clear.textContent = panel.t("cuelith.richtext.clear");
+element("outline-label").textContent = panel.t("cuelith.richtext.outline");
+element("shadow-label").textContent = panel.t("cuelith.richtext.shadow");
+outlineColor.setAttribute("aria-label", panel.t("cuelith.richtext.outlineColor"));
+const addChoice = (select: HTMLSelectElement, value: string, text: string): void => {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = text;
+  select.append(option);
+};
+addChoice(outline, "none", panel.t("cuelith.richtext.none"));
+for (const preset of OUTLINES)
+  addChoice(outline, preset, panel.t(`cuelith.richtext.outline.${preset}`));
+addChoice(shadow, "none", panel.t("cuelith.richtext.shadowNone"));
+for (const preset of SHADOWS)
+  addChoice(shadow, preset, panel.t(`cuelith.richtext.shadow.${preset}`));
 
 const percent = (value: number): string => `${String(Math.round(value * 100))}%`;
 const addSize = (value: number): void => {
@@ -50,6 +74,11 @@ const render = (): void => {
   italic.disabled = !on || !view.canItalic;
   color.disabled = !on;
   clear.disabled = !on;
+  outline.disabled = !on;
+  outlineColor.disabled = !on;
+  shadow.disabled = !on;
+  outline.value = view.outline;
+  shadow.value = view.shadow;
   bold.setAttribute("aria-pressed", String(view.bold));
   italic.setAttribute("aria-pressed", String(view.italic));
   // Una dimensione che non e' tra quelle offerte (messa da un altro strumento) si aggiunge.
@@ -74,8 +103,27 @@ size.addEventListener("change", () => void apply({ size: Number(size.value) }));
 bold.addEventListener("click", () => void apply({ bold: "toggle" }));
 italic.addEventListener("click", () => void apply({ italic: "toggle" }));
 color.addEventListener("change", () => void apply({ color: color.value }));
+outline.addEventListener("change", () => {
+  const preset = outline.value as OutlinePreset | "none";
+  void apply({
+    outline:
+      preset === "none" ? null : { width: OUTLINE_PRESETS[preset], color: outlineColor.value },
+  });
+});
+outlineColor.addEventListener("change", () => {
+  const preset = outline.value as OutlinePreset | "none";
+  if (preset !== "none") {
+    void apply({ outline: { width: OUTLINE_PRESETS[preset], color: outlineColor.value } });
+  }
+});
+shadow.addEventListener("change", () => {
+  const preset = shadow.value as ShadowPreset | "none";
+  void apply({
+    shadow: preset === "none" ? null : { ...SHADOW_PRESETS[preset], color: "#000000" },
+  });
+});
 clear.addEventListener("click", () => {
-  void apply({ size: null, bold: false, italic: false, color: null });
+  void apply({ size: null, bold: false, italic: false, color: null, outline: null, shadow: null });
 });
 
 panel.onState(render);

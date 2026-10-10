@@ -17,5 +17,15 @@
   "cuelith.richtext.onboarding.2.title": "Seleziona delle parole",
   "cuelith.richtext.onboarding.2.body": "Seleziona nel testo le parole da cambiare, poi scegli dimensione, grassetto, corsivo o colore da questo pannello.",
   "cuelith.richtext.onboarding.3.title": "Il testo resta semplice",
-  "cuelith.richtext.onboarding.3.body": "Il testo non cambia: la formattazione sta accanto, e chi non la conosce legge il testo di sempre."
+  "cuelith.richtext.onboarding.3.body": "Il testo non cambia: la formattazione sta accanto, e chi non la conosce legge il testo di sempre.",
+  "cuelith.richtext.outline": "Bordo",
+  "cuelith.richtext.none": "Nessuno",
+  "cuelith.richtext.outline.thin": "Sottile",
+  "cuelith.richtext.outline.medium": "Medio",
+  "cuelith.richtext.outline.thick": "Spesso",
+  "cuelith.richtext.outlineColor": "Colore del bordo",
+  "cuelith.richtext.shadow": "Ombra",
+  "cuelith.richtext.shadowNone": "Nessuna",
+  "cuelith.richtext.shadow.light": "Leggera",
+  "cuelith.richtext.shadow.strong": "Forte"
 }

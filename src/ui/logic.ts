@@ -1,7 +1,13 @@
 import {
+  OUTLINE_PRESETS,
+  SHADOW_PRESETS,
   TEXT_FONTS_WITH_ITALIC,
   cleanSpans,
+  outlinePresetOf,
+  shadowPresetOf,
+  type OutlinePreset,
   type RichSession,
+  type ShadowPreset,
   type StateDocument,
 } from "@cuelith/protocol";
 
@@ -20,6 +26,9 @@ export interface BarView {
   readonly italic: boolean;
   /** Dimensione all'inizio del tratto (multiplo dello stile). */
   readonly size: number;
+  /** Bordo e ombra all'inizio del tratto ("none" = nessuno). */
+  readonly outline: OutlinePreset | "none";
+  readonly shadow: ShadowPreset | "none";
 }
 
 interface LookStyle {
@@ -53,6 +62,8 @@ export function viewOf(state: StateDocument): BarView {
       bold: false,
       italic: false,
       size: 1,
+      outline: "none",
+      shadow: "none",
     };
   }
   const { start, end } = session.selection;
@@ -77,8 +88,13 @@ export function viewOf(state: StateDocument): BarView {
     bold: covered("bold"),
     italic: covered("italic"),
     size: here?.size ?? 1,
+    outline: outlinePresetOf(here?.outline) ?? "none",
+    shadow: shadowPresetOf(here?.shadow) ?? "none",
   };
 }
+
+export const OUTLINES = Object.keys(OUTLINE_PRESETS) as OutlinePreset[];
+export const SHADOWS = Object.keys(SHADOW_PRESETS) as ShadowPreset[];
 
 /** Dimensioni offerte: multipli di quella dello stile. */
 export const SIZES = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3] as const;

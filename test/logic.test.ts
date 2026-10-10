@@ -91,3 +91,25 @@ describe("barra della formattazione", () => {
     expect(viewOf(state(session())).canItalic).toBe(true);
   });
 });
+
+describe("bordo e ombra nella barra", () => {
+  it("dicono cosa ha gia' il tratto selezionato", () => {
+    const plain = viewOf(state(session()));
+    expect(plain).toMatchObject({ outline: "none", shadow: "none" });
+    const styled = viewOf(
+      state(
+        session({
+          spans: [
+            {
+              start: 3,
+              end: 10,
+              outline: { width: 4, color: "#000000" },
+              shadow: { offset: 6, blur: 10, color: "#000000" },
+            },
+          ],
+        }),
+      ),
+    );
+    expect(styled).toMatchObject({ outline: "medium", shadow: "strong" });
+  });
+});

@@ -17,5 +17,15 @@
   "cuelith.richtext.onboarding.2.title": "Select some words",
   "cuelith.richtext.onboarding.2.body": "Select the words to change in the text, then choose size, bold, italic or colour from this panel.",
   "cuelith.richtext.onboarding.3.title": "The text stays plain",
-  "cuelith.richtext.onboarding.3.body": "The text does not change: the formatting sits next to it, and anything that does not know about it reads the usual text."
+  "cuelith.richtext.onboarding.3.body": "The text does not change: the formatting sits next to it, and anything that does not know about it reads the usual text.",
+  "cuelith.richtext.outline": "Outline",
+  "cuelith.richtext.none": "None",
+  "cuelith.richtext.outline.thin": "Thin",
+  "cuelith.richtext.outline.medium": "Medium",
+  "cuelith.richtext.outline.thick": "Thick",
+  "cuelith.richtext.outlineColor": "Outline colour",
+  "cuelith.richtext.shadow": "Shadow",
+  "cuelith.richtext.shadowNone": "None",
+  "cuelith.richtext.shadow.light": "Light",
+  "cuelith.richtext.shadow.strong": "Strong"
 }

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formattazione</title>
+    <!-- Colori, caratteri e classi comuni della postazione (serviti dal motore). -->
+    <link rel="stylesheet" href="/ui/cuelith-ui.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="cl-root">
+    <main id="root" aria-live="polite">
+      <p id="status" class="status"></p>
+      <div id="bar" role="toolbar" class="bar">
+        <label class="field">
+          <span id="size-label"></span>
+          <select id="size"></select>
+        </label>
+        <button id="bold" type="button" class="tool bold"></button>
+        <button id="italic" type="button" class="tool italic"></button>
+        <label class="field">
+          <span id="color-label"></span>
+          <input id="color" type="color" value="#FFD166" />
+        </label>
+        <button id="clear" type="button" class="tool"></button>
+      </div>
+    </main>
+    <script type="module" src="./panel.ts"></script>
+  </body>
+</html>

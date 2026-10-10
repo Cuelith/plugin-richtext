@@ -1,0 +1,38 @@
+{
+  "$schema": "https://cuelith.github.io/cuelith-sdk/schema/plugin-1.json",
+  "id": "cuelith.richtext",
+  "name": "Formattazione",
+  "description": "Ingrandisci, metti in grassetto, in corsivo o colora solo alcune parole di un testo, negli editor dei plugin che lo supportano.",
+  "version": "0.2.0",
+  "publisher": "Cuelith",
+  "license": "GPL-3.0-or-later",
+  "repository": "https://github.com/Cuelith/plugin-richtext",
+  "family": "function",
+  "icon": "icon.svg",
+  "engines": { "cuelith": ">=0.1.0 <1.0.0", "protocol": "^1.23.0" },
+  "runtime": { "type": "none" },
+  "ui": { "entry": "ui/index.html" },
+  "permissions": [],
+  "dependencies": {},
+  "extends": [],
+  "provides": [],
+  "contributes": {
+    "panels": [{ "id": "format", "title": "cuelith.richtext.panel", "placement": "editor" }],
+    "locales": [
+      { "lang": "it", "file": "locales/it.json" },
+      { "lang": "en", "file": "locales/en.json" }
+    ]
+  },
+  "docs": { "url": "https://github.com/Cuelith/plugin-richtext#readme" },
+  "onboarding": [
+    {
+      "title": "cuelith.richtext.onboarding.1.title",
+      "body": "cuelith.richtext.onboarding.1.body"
+    },
+    {
+      "title": "cuelith.richtext.onboarding.2.title",
+      "body": "cuelith.richtext.onboarding.2.body"
+    },
+    { "title": "cuelith.richtext.onboarding.3.title", "body": "cuelith.richtext.onboarding.3.body" }
+  ]
+}

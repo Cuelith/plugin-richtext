@@ -1,0 +1,21 @@
+{
+  "cuelith.richtext.panel": "Formatting",
+  "cuelith.richtext.idle": "Open a text in an editor that supports formatted words and select some words.",
+  "cuelith.richtext.selectSome": "Select some words in the text.",
+  "cuelith.richtext.selected": "{count} characters selected.",
+  "cuelith.richtext.size": "Size",
+  "cuelith.richtext.sizeNormal": "Normal",
+  "cuelith.richtext.bold": "Bold",
+  "cuelith.richtext.boldShort": "B",
+  "cuelith.richtext.italic": "Italic",
+  "cuelith.richtext.italicShort": "I",
+  "cuelith.richtext.color": "Colour",
+  "cuelith.richtext.clear": "Clear formatting",
+  "cuelith.richtext.noItalic": "The typeface in use has no true italic: pick another one from the text styles.",
+  "cuelith.richtext.onboarding.1.title": "Open a text",
+  "cuelith.richtext.onboarding.1.body": "Open the editor of a text or song that supports formatted words: this panel turns on by itself.",
+  "cuelith.richtext.onboarding.2.title": "Select some words",
+  "cuelith.richtext.onboarding.2.body": "Select the words to change in the text, then choose size, bold, italic or colour from this panel.",
+  "cuelith.richtext.onboarding.3.title": "The text stays plain",
+  "cuelith.richtext.onboarding.3.body": "The text does not change: the formatting sits next to it, and anything that does not know about it reads the usual text."
+}

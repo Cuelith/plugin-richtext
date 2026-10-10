@@ -1,0 +1,71 @@
+:root {
+  color-scheme: dark;
+}
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 12px;
+}
+.status {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--cl-muted, #a9adb4);
+}
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--cl-muted, #a9adb4);
+}
+select,
+input[type="color"],
+.tool {
+  border: 1px solid var(--cl-line-2, #3a3d44);
+  border-radius: 6px;
+  background: var(--cl-bg, #0b0c0e);
+  color: var(--cl-fg, #eceae4);
+  font: inherit;
+  font-size: 12px;
+}
+select,
+.tool {
+  padding: 3px 10px;
+}
+input[type="color"] {
+  width: 36px;
+  height: 26px;
+  padding: 0;
+}
+.tool:hover:not(:disabled) {
+  border-color: var(--cl-muted, #a9adb4);
+}
+.tool[aria-pressed="true"] {
+  border-color: var(--cl-cue, #37d1bf);
+  background: var(--cl-cue-bg, rgba(55, 209, 191, 0.14));
+}
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

@@ -1,0 +1,21 @@
+{
+  "cuelith.richtext.panel": "Formattazione",
+  "cuelith.richtext.idle": "Apri un testo in un editor che supporta le parole formattate e seleziona delle parole.",
+  "cuelith.richtext.selectSome": "Seleziona delle parole nel testo.",
+  "cuelith.richtext.selected": "{count} caratteri selezionati.",
+  "cuelith.richtext.size": "Dimensione",
+  "cuelith.richtext.sizeNormal": "Normale",
+  "cuelith.richtext.bold": "Grassetto",
+  "cuelith.richtext.boldShort": "G",
+  "cuelith.richtext.italic": "Corsivo",
+  "cuelith.richtext.italicShort": "C",
+  "cuelith.richtext.color": "Colore",
+  "cuelith.richtext.clear": "Togli formattazione",
+  "cuelith.richtext.noItalic": "Il carattere in uso non ha un corsivo vero: scegline un altro dagli stili del testo.",
+  "cuelith.richtext.onboarding.1.title": "Apri un testo",
+  "cuelith.richtext.onboarding.1.body": "Apri l'editor di un testo o di un brano che supporta le parole formattate: questo pannello si accende da solo.",
+  "cuelith.richtext.onboarding.2.title": "Seleziona delle parole",
+  "cuelith.richtext.onboarding.2.body": "Seleziona nel testo le parole da cambiare, poi scegli dimensione, grassetto, corsivo o colore da questo pannello.",
+  "cuelith.richtext.onboarding.3.title": "Il testo resta semplice",
+  "cuelith.richtext.onboarding.3.body": "Il testo non cambia: la formattazione sta accanto, e chi non la conosce legge il testo di sempre."
+}
